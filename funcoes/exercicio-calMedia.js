@@ -10,6 +10,7 @@ function calculadoraMedia(){
     }
 
     let resultado = 0;
+    
     for (let i = 0; i < arg.length; i++) {
         if (typeof arg[i] !== "number") {
             throw error("Only Numbers");
