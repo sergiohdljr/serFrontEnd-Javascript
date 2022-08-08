@@ -22,4 +22,3 @@ function catName(name) {
 console.log(num); // Retorna undefined
 var num;
 num = 6
-
