@@ -1,9 +1,11 @@
-## serFrontEnd-Javascript
+# serFrontEnd-Javascript
 
-# Neste repósitorio irei registrar todas a minhas aulas, exercícios e projetos do curso de JavaScript do iniciante ao meste
+Neste repósitorio irei registrar todas a minhas aulas, exercícios e projetos do curso de JavaScript do iniciante ao meste
 do SerFrontEnd com o Professor Daniel Tapias
 
-# O repositório vai estar dividido em pastas dos fundamentos que vou aprendendo e nessas pastas estaram os exercicíos propostos em cada módulo.
+# Organização: 
+
+O repositório vai estar dividido em pastas dos fundamentos que vou aprendendo e nessas pastas estaram os exercicíos propostos em cada módulo.
 E além disso também vou registrar exemplos de outras fontes, como a documentação oficial do javaScript no MDN
 (https://developer.mozilla.org/en-US/docs/Web/JavaScript), entre outras. 
 
