@@ -46,8 +46,8 @@ const DondaSongs = kanyeSongs.filter((song)=>{
 // console.log(DondaSongs)
 
 // ------------REDUCE-------------
-
-const idades = [25,30,22,34,25,30]
+const idade = [25,30,22,34,25,30] 
+const idades =[...idade] 
 
 const somaIdades = idades.reduce(function(acc,idadeAtual){
     return acc + idadeAtual

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsa atque
+      eveniet sint nesciunt ullam laboriosam quos eaque doloremque sit aliquid,
+      accusamus culpa. Aliquam doloribus ullam maxime omnis distinctio amet?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsa atque
+      eveniet sint nesciunt ullam laboriosam quos eaque doloremque sit aliquid,
+      accusamus culpa. Aliquam doloribus ullam maxime omnis distinctio amet?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsa atque
+      eveniet sint nesciunt ullam laboriosam quos eaque doloremque sit aliquid,
+      accusamus culpa. Aliquam doloribus ullam maxime omnis distinctio amet?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsa atque
+      eveniet sint nesciunt ullam laboriosam quos eaque doloremque sit aliquid,
+      accusamus culpa. Aliquam doloribus ullam maxime omnis distinctio amet?
+    </p>
+    <script>
+        let paragrafros = document.querySelectorAll('p')
+
+    paragrafros = Array.from(paragrafros)
+
+        paragrafros.map((p,i)=>{
+            p.textContent = `${++i} - ${p.textContent}`
+        })
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
