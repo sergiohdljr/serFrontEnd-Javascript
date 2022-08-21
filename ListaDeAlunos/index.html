@@ -145,15 +145,27 @@
 
     <script src="./js/calc.js"></script>
     <script>
-      const indices_notas = {
-        n1: 1,
-        n2: 2,
-        n3: 3,
-        n4: 4,
-        media: 5,
-      };
-
       (function () {
+        const trHeader = document.querySelector("thead tr");
+        const thsHeader = trHeader.querySelectorAll("th");
+        const thsAlunoNotas = trHeader.querySelectorAll("[aluno-nota")
+        const indices_notas = {}
+        Array.from(thsAlunoNotas).forEach(function(th){
+          let prop = th.getAttribute("aluno-nota")
+          indices_notas[prop] = pegaIndice(prop)
+
+        })
+
+        function pegaIndice(indice) {
+          const th = trHeader.querySelector(`[aluno-nota = "${indice}"] `);
+
+          // thsHeader.indexOf(th)
+          // const i = array.prototype.indexOf.call(thsHeader,th)
+          // const i = Array.from(thsHeader).indexOf(th)
+          const i = [...thsHeader].indexOf(th);
+          return i;
+        }
+
         const trs = document.querySelectorAll("tbody tr");
 
         let x = 0;
