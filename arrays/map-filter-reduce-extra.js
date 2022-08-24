@@ -76,3 +76,21 @@ const arrayUnico = arrays.reduce((acc,array)=>{
 },[])
 
 // console.log(arrayUnico)
+
+
+const produtos =[ 
+{
+  nome : 'computador',
+  preco : 1500
+},
+{
+  nome:'celular',
+  preco: 1000
+}
+]
+
+const precoTotal = produtos.reduce((acc, item)=>{
+  return acc + item.preco
+},0)
+
+console.log(precoTotal)
