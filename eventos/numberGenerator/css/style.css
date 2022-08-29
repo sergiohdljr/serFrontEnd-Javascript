@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+label{
+    display: flex;
+    gap: 1rem;
+}
+
+.input {
+  width: 500px;
+  height: 40px;
+  border: 1px greenyellow solid;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+}
+
+.wrapper{
+    margin: auto 0;
+    border: 1px blue solid;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.number{
+    width: calc(100% / 5);
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    font-size: 3rem;
+    border: 1px white solid;
+    outline: 1px;
+}

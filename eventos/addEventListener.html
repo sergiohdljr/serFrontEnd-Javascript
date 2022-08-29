@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Exemplo de Evento DOM</title>
+
+<style>
+#t { border: 1px solid red }
+#t1 { background-color: pink; }
+</style>
+
+<body>
+
+<table id="t">
+   <tr><td id="t1">one</td></tr>
+   <tr><td id="t2">two</td></tr>
+</table>
+
+<script>
+    // função para mudar o conteudo de t2
+    function modifyText(){
+        const t2 = document.getElementById("t2")
+        t2.textContent = "three"
+    }
+
+    const el = document.getElementById("t")
+    el.addEventListener("click",modifyText)
+</script>
+
+</body>
+</html>

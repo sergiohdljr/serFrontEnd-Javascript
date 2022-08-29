@@ -1,0 +1,33 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+}
+
+.container{
+    width: 85%;
+    height: auto;
+    /* border: 1px red solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.country{
+    width: calc(85% / 6);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px lightsteelblue solid;
+    margin-top: 1rem;
+}
+
+.country-name{
+    font-size: 1.5rem;
+    text-align: center;
+}

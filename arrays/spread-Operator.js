@@ -19,5 +19,13 @@ const array = [8,5,6,7,8]
 const copia = [...array]
 copia.push(8)
 
-console.log(array)
-console.log(copia)
+// console.log(array)
+// console.log(copia)
+
+// duplicando elementos de um array 
+
+function duplicate(array){
+    return array.concat(...array)
+}
+
+console.log(duplicate([1,2,3,4,5]))
