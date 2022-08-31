@@ -6,38 +6,60 @@
 
   btn.addEventListener("click", (e) => {
     if (!txtTitulo.value) {
-      alert("preencha todos os dados");
+      showErrorMessage("preencha todos os dados", function () {
+        txtTitulo.focus();
+      });
       e.preventDefault();
-      txtTitulo.focus();
     }
   });
 
-  const txtDescricao = document.querySelector("#txtDescricao")
-  const contadorContainer = document.getElementById("contador")
-  const resta = contadorContainer.getElementsByTagName("span")[0]
-  const maxima = txtDescricao.maxLength
-  mostrarNumero(maxima)
+  const feedbackMessage = document.querySelector("#feedbackMessage");
+
+  const feedbackMessageCloseBtn =
+    feedbackMessage.getElementsByTagName("button")[0];
+
+  function showErrorMessage(msg, cb) {
+    feedbackMessage.classList.add("show");
+    feedbackMessage.getElementsByTagName("p")[0].textContent = msg;
+
+    function hiddenErrorMessage(){
+      feedbackMessage.classList.remove("show");
+      feedbackMessageCloseBtn.removeEventListener("click", hiddenErrorMessage); 
+      if (typeof cb === "function") {
+        cb();
+      } 
+    }
   
-  contadorContainer.removeAttribute("style")
+
+    feedbackMessageCloseBtn.addEventListener("click", hiddenErrorMessage);
+
+    
+  }
+
+  const txtDescricao = document.querySelector("#txtDescricao");
+  const contadorContainer = document.getElementById("contador");
+  const resta = contadorContainer.getElementsByTagName("span")[0];
+  const maxima = txtDescricao.maxLength;
+  mostrarNumero(maxima);
+
+  contadorContainer.removeAttribute("style");
 
   function checkLength() {
-    let numeroLetrasDigitadas = txtDescricao.value.length
-    let caractersRestantes = parseInt(maxima) - parseInt(numeroLetrasDigitadas)
-    mostrarNumero(caractersRestantes)
+    let numeroLetrasDigitadas = txtDescricao.value.length;
+    let caractersRestantes = parseInt(maxima) - parseInt(numeroLetrasDigitadas);
+    mostrarNumero(caractersRestantes);
   }
 
-  function mostrarNumero(n){
+  function mostrarNumero(n) {
     resta.textContent = n;
   }
-  txtDescricao.addEventListener('input',checkLength)
+  txtDescricao.addEventListener("input", checkLength);
 
-    btn.disabled = true
+  btn.disabled = true;
 
-    const chkAceito = document.querySelector("#chkAceito")
-    
-    chkAceito.addEventListener('change',function(){
-      btn.disabled = !this.checked
-    })
+  const chkAceito = document.querySelector("#chkAceito");
 
-    
+  chkAceito.addEventListener("change", function () {
+    btn.disabled = !this.checked;
+  });
 })();
