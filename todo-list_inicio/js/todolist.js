@@ -22,14 +22,30 @@
   }
 
   function generateLiTask(obj) {
+    
     const li = document.createElement("li");
-    li.className = "todo-item";
     const p = document.createElement("p");
+    const checkButton = document.createElement("button")
+    const editButton = document.createElement("i");
+    const deleteButton = document.createElement("i")
+
+    li.className = "todo-item";
     p.className = "task-name";
+    checkButton.className = "button-check";
+    checkButton.innerHTML = '<i class = "fas fa-check displayNone"></i>'
+
+    li.appendChild(checkButton)
+
     p.textContent = obj.name;
     li.appendChild(p);
-    addEventLi(li);
 
+    editButton.className = "fas fa-edit"
+    li.appendChild(editButton)
+
+    deleteButton.className = "fas fa-trash-alt"
+    li.appendChild(deleteButton)
+
+    addEventLi(li);
     return li;
   }
 
