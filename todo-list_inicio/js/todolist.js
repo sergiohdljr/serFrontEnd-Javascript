@@ -15,44 +15,64 @@
     },
   ];
 
-  function addEventLi(li) {
-    li.addEventListener("click", function () {
-      console.log(this);
-    });
-  }
+  // function addEventLi(li) {
+  //   li.addEventListener("click", function () {
+  //     console.log(this);
+  //   });
+  // }
 
   function generateLiTask(obj) {
-    
     const li = document.createElement("li");
     const p = document.createElement("p");
-    const checkButton = document.createElement("button")
+    const checkButton = document.createElement("button");
     const editButton = document.createElement("i");
-    const deleteButton = document.createElement("i")
+    const deleteButton = document.createElement("i");
 
     li.className = "todo-item";
     p.className = "task-name";
     checkButton.className = "button-check";
-    checkButton.innerHTML = '<i class = "fas fa-check displayNone"></i>'
-
-    li.appendChild(checkButton)
+    checkButton.innerHTML = '<i class = "fas fa-check displayNone"></i>';
+    checkButton.setAttribute("data-action", "checkButton");
+    li.appendChild(checkButton);
 
     p.textContent = obj.name;
     li.appendChild(p);
 
-    editButton.className = "fas fa-edit"
-    li.appendChild(editButton)
+    const containerEdit = document.createElement("div");
+    containerEdit.className = "editContainer";
+    const inputEdit = document.createElement("input");
+    inputEdit.setAttribute("type", "text");
+    inputEdit.className = "editInput";
+    containerEdit.appendChild(inputEdit);
+    const containerEditButton = document.createElement("button");
+    containerEditButton.className = "editButton";
+    containerEditButton.textContent = "Edit";
+    containerEditButton.setAttribute("data-action","containerEditButton")
+    containerEdit.appendChild(containerEditButton);
+    const containerCancelButton = document.createElement("button");
+    containerCancelButton.className = "cancelButton";
+    containerCancelButton.textContent = "cancel";
+    containerCancelButton.setAttribute("data-action","containerCancelButton")
+    containerEdit.appendChild(containerCancelButton);
 
-    deleteButton.className = "fas fa-trash-alt"
-    li.appendChild(deleteButton)
+    li.appendChild(containerEdit);
 
-    addEventLi(li);
+    editButton.className = "fas fa-edit";
+    editButton.setAttribute("data-action", "editButton");
+    li.appendChild(editButton);
+
+    deleteButton.className = "fas fa-trash-alt";
+    deleteButton.setAttribute("data-action", "deleteButton")
+    li.appendChild(deleteButton);
+
+    // addEventLi(li);
     return li;
   }
 
   function renderTasks() {
     ul.innerHTML = "";
     arrTasks.forEach((taskObj) => {
-      ul.appendChild(generateLiTask(taskObj))
+      ul.appendChild(generateLiTask(taskObj));
     });
   }
 
@@ -64,14 +84,21 @@
     });
   }
 
+  function clickedUl(e) {
+    console.log(e.target)
+    console.log(e.target.getAttribute("data-action"))
+
+  }
+
   todoAddForm.addEventListener("submit", function (e) {
     e.preventDefault();
     addTask(itemInput.value);
-    renderTasks()
+    renderTasks();
     itemInput.value = "";
     itemInput.focus();
   });
 
-  renderTasks()
-  
+  ul.addEventListener("click", clickedUl);
+
+  renderTasks();
 })();
