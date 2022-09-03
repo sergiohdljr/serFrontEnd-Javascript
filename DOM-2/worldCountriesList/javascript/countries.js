@@ -193,14 +193,21 @@ const countries = [
   "Zambia",
   "Zimbabwe",
 ];
-const container = document.querySelector(".container")
+const container = document.querySelector(".container");
 
-countries.forEach((country)=>{
-  const countryCard = document.createElement("div")
-  countryCard.classList.add("country")
-  const countryName = document.createElement("span")
-  countryName.classList.add("country-name")
-  countryCard.appendChild(countryName)
-  countryName.textContent = `${country}`
-  container.appendChild(countryCard)
-})
+function renderCountry(card) {
+  container.appendChild(card);
+}
+
+function createCountryCard(country) {
+  const countryCard = document.createElement("div");
+  countryCard.classList.add("country");
+  const countryName = document.createElement("span");
+  countryName.classList.add("country-name");
+  countryCard.appendChild(countryName);
+  countryName.textContent = `${country}`;
+
+  return countryCard;
+}
+
+countries.map(country => renderCountry(createCountryCard(country)));
