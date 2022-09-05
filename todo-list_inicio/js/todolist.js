@@ -5,7 +5,7 @@
   const itemInput = document.getElementById("item-input");
   const todoAddForm = document.getElementById("todo-add");
   const ul = document.getElementById("todo-list");
-  // const lis = ul.getElementsByTagName("li")
+  const lis = ul.getElementsByTagName("li")
 
   let arrTasks = [
     {
@@ -47,12 +47,12 @@
     const containerEditButton = document.createElement("button");
     containerEditButton.className = "editButton";
     containerEditButton.textContent = "Edit";
-    containerEditButton.setAttribute("data-action","containerEditButton")
+    containerEditButton.setAttribute("data-action", "containerEditButton");
     containerEdit.appendChild(containerEditButton);
     const containerCancelButton = document.createElement("button");
     containerCancelButton.className = "cancelButton";
     containerCancelButton.textContent = "cancel";
-    containerCancelButton.setAttribute("data-action","containerCancelButton")
+    containerCancelButton.setAttribute("data-action", "containerCancelButton");
     containerEdit.appendChild(containerCancelButton);
 
     li.appendChild(containerEdit);
@@ -62,7 +62,7 @@
     li.appendChild(editButton);
 
     deleteButton.className = "fas fa-trash-alt";
-    deleteButton.setAttribute("data-action", "deleteButton")
+    deleteButton.setAttribute("data-action", "deleteButton");
     li.appendChild(deleteButton);
 
     // addEventLi(li);
@@ -85,9 +85,7 @@
   }
 
   function clickedUl(e) {
-    console.log(e.target)
-    console.log(e.target.getAttribute("data-action"))
-
+    
   }
 
   todoAddForm.addEventListener("submit", function (e) {
