@@ -13,8 +13,9 @@ E além disso também vou registrar exemplos de outras fontes, como a documenta�
 
  1. Dominar a linguagem Javascript
  2. Desenvolver diversos códigos em exemplos práticos do mundo real (fuja de exemplos apenas 'hello wold')
- 3. Conhecer as principais novidades no ES6 Iniciar com orientação a objetos em Javascript
-    Dar os primeiros passos com TypeScript
+ 3. Conhecer as principais novidades no ES6 
+ 4. Iniciar com orientação a objetos em Javascript
+ 5. Dar os primeiros passos com TypeScript
  4. Conhecer o básico sobre o modelo MVC
  5. Dar primeiros passos na criação de uma API Rest
 
