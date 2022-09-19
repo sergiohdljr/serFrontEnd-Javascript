@@ -7,11 +7,12 @@ const tbody = tabelaPrincipal.querySelector("tbody")
 
 let pessoas = [];
 
+
 form.addEventListener("submit", (e) => {
   let nomePessoa = nome.value;
-  let dataFormatada = dataNascimento.value.split("-").reverse().join("-");
+  let dataFormatada = formatarData(dataNascimento) 
 
-  pessoas.push({nomePessoa , dataFormatada})
+  pessoas.push({nomePessoa , dataFormatada}) 
   e.preventDefault();
   renderTable()
 
@@ -29,13 +30,20 @@ function criarRow(pessoa) {
   tdData.textContent = `${pessoa.dataFormatada}`;
   tr.appendChild(tdData);
 
+  tdNome.classList.add("td-dados")
+  tdData.classList.add("td-dados")
+
   return tr
 }
 
 function renderTable(){
   tbody.innerHTML = "";
   pessoas.forEach((pessoa) => {
-     tbody.appendChild(criarRow(pessoa));
-});
+    tbody.appendChild(criarRow(pessoa));
+  });
 
+}
+
+function formatarData(dataNascimento){
+  return dataNascimento.value.split("-").reverse().join("-");
 }

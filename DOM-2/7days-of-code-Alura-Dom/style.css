@@ -1,0 +1,36 @@
+ h1{
+    text-align: center;
+ }
+ .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .form-field{
+    width: 300px;
+    margin: 0.5rem;
+ }
+
+ .titulo-campo{
+    margin-right: 0.5rem;
+ }
+
+ .tabela-principal {
+    width: 52%;
+    height: auto;
+    margin: 0 auto;
+    background-color: blue;
+ }
+
+ thead > .tabela-titulo{
+    background-color: aqua;
+    text-align: center;
+    width: auto;
+ }
+
+ .td-dados {
+    border: 1px black solid;
+    text-align: center;
+ }
+
