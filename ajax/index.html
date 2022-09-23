@@ -9,24 +9,12 @@
 <body>
     <h1>Primeiro exemplo com XMLHttpRequest</h1>
 
+    <script src="./createXMLHttpRequest.js"></script>
     <script>
-        const xhr = new XMLHttpRequest()
+        createXMLHttpRequest("GET","dados.json",mostrarUsuarios)
 
-        xhr.open("GET" , "dados.json")
-        xhr.send(null)
-
-        xhr.onreadystatechange = verificaAjax 
-
-        function verificaAjax(){
-            if(xhr.readyState === 4){
-               if(xhr.status === 200 || xhr.status === 304){
-                console.log(xhr.responseText)
-                const json = JSON.parse(xhr.responseText)
-
-                console.log(json)
-                console.log(json[0])
-               } 
-            }
+        function mostrarUsuarios(data){
+            console.log(data)
         }
     </script>
 </body>
